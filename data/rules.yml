@@ -1,0 +1,15 @@
+rules:
+- rule: if location check failed
+  condition:
+    - slot_was_set:
+      - location_check: false
+  steps:
+    - action: utter_donotoperate
+
+- rule: Say `hello` when the user starts a conversation with intent `greet`
+  conversation_start: true
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
